@@ -19,7 +19,7 @@ from visualization.comparison import side_by_side
 from visualization.math_workspace import render as render_math
 
 
-st.set_page_config(page_title="Edge Detection · Chest X-ray Lab",
+st.set_page_config(page_title="Edge Detection · Image Mathematical Lab",
                    page_icon="📐", layout="wide")
 
 if "trace_manager" not in st.session_state:
@@ -32,7 +32,7 @@ st.title("📐 Edge Detection")
 st.caption("Gradient-based edge detection with explicit kernels.")
 
 if gray is None:
-    st.warning("⬅️ Upload a chest X-ray on the main page first.")
+    st.warning("⬅️ Upload an image on the main page first.")
     st.stop()
 
 

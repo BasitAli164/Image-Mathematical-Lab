@@ -32,7 +32,7 @@ from visualization.math_workspace import render as render_math
 from visualization.comparison import side_by_side
 
 
-st.set_page_config(page_title="Matrix Explorer · Chest X-ray Lab",
+st.set_page_config(page_title="Matrix Explorer · Image Mathematical Lab",
                    page_icon="🔢", layout="wide")
 
 if "trace_manager" not in st.session_state:
@@ -45,7 +45,7 @@ st.title("🔢 Matrix Explorer")
 st.caption("Every pixel is a number. Explore the matrix.")
 
 if gray is None:
-    st.warning("⬅️ Please upload a chest X-ray on the main page first.")
+    st.warning("⬅️ Please upload an image on the main page first.")
     st.stop()
 
 

@@ -15,7 +15,7 @@ from mathematical_engine.trace_manager import TraceManager
 from visualization.comparison import difference_view, side_by_side
 
 
-st.set_page_config(page_title="Reports · Chest X-ray Lab",
+st.set_page_config(page_title="Reports · Image Mathematical Lab",
                    page_icon="📄", layout="wide")
 
 if "trace_manager" not in st.session_state:
@@ -31,7 +31,7 @@ st.caption(
 )
 
 if gray is None:
-    st.warning("⬅️ Upload a chest X-ray on the main page first.")
+    st.warning("⬅️ Upload an image on the main page first.")
     st.stop()
 
 
@@ -196,7 +196,7 @@ try:
     width, height = A4
 
     c.setFont("Helvetica-Bold", 16)
-    c.drawString(50, height - 50, "Chest X-ray Mathematical Lab")
+    c.drawString(50, height - 50, " Image Mathematical Lab")
     c.setFont("Helvetica", 10)
     c.drawString(50, height - 70,
                  f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -207,7 +207,7 @@ try:
     c.drawString(50, y, "Comparison:")
     c.setFont("Helvetica", 10)
     y -= 20
-    c.drawString(60, y, f"Source: uploaded chest X-ray")
+    c.drawString(60, y, f"Source: uploaded image")
     y -= 15
     c.drawString(60, y, f"Processed: {choice}")
     y -= 15

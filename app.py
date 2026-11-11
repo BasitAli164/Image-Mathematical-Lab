@@ -1,17 +1,7 @@
 """Image Mathematical Lab — Linear Algebra Image Processing.
 
 Phase 6 (final) entry point. All modules are now available via the
-sidebar navigation under `pages/`:
-
-    - Dashboard
-    - Matrix Explorer
-    - Enhancement
-    - Noise Reduction
-    - Edge Detection
-    - PCA Analysis
-    - SVD Compression
-    - Feature Analysis
-    - Reports
+custom sidebar navigation.
 
 Each operation records an actual mathematical trace with three levels of
 transparency (formula / derivation / pixel-level inspection).
@@ -35,11 +25,22 @@ from mathematical_engine.trace_manager import TraceManager
 
 
 st.set_page_config(
-    page_title=" Image Processing Mathematical Lab",
+    page_title="Image Processing Mathematical Lab",
     page_icon="🖼️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# =========================================================
+# CUSTOM SIDEBAR CSS (Hides default streamlit navigation)
+# =========================================================
+st.markdown("""
+    <style>
+        [data-testid="stSidebarNav"] {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 
 def _init_session_state() -> None:
@@ -70,6 +71,27 @@ def _render_matrix_preview(arr: np.ndarray, n_rows: int = 6,
 
 def _render_sidebar_uploader() -> None:
     with st.sidebar:
+        # =========================================================
+        # NAYA CUSTOM NAVIGATION MENU
+        # =========================================================
+        st.title("🧭 Navigation")
+        st.markdown("---")
+        
+        st.page_link("pages/01_dashboard.py", label="📊 Dashboard", help="Session summary and history")
+        st.page_link("pages/02_matrix_explorer.py", label="🔢 Matrix Explorer", help="Pixels as numbers, matrix operations")
+        st.page_link("pages/03_enhancement.py", label="✨ Enhancement", help="Brightness, contrast, hist-eq, CLAHE")
+        st.page_link("pages/04_noise_reduction.py", label="🧹 Noise Reduction", help="Mean, Gaussian, median, custom kernels")
+        st.page_link("pages/05_edge_detection.py", label="📐 Edge Detection", help="Sobel, Laplacian, Canny")
+        st.page_link("pages/06_pca_analysis.py", label="🧬 PCA Analysis", help="Eigen-decomposition over reference stack")
+        st.page_link("pages/07_svd_compression.py", label="🗜️ SVD Compression", help="Rank-k reconstruction")
+        st.page_link("pages/08_feature_analysis.py", label="📊 Feature Analysis", help="Mathematical image descriptors")
+        st.page_link("pages/09_reports.py", label="📄 Reports", help="Comparison, metrics, downloads")
+
+        st.markdown("---")
+        
+        # =========================================================
+        # UPLOAD SECTION
+        # =========================================================
         st.markdown("## 📤 Upload Image")
         uploaded = st.file_uploader(
             "PNG, JPG or JPEG · max 15 MB",
@@ -82,7 +104,7 @@ def _render_sidebar_uploader() -> None:
         st.markdown("### ℹ️ About")
         st.markdown(
             "An interactive **Linear Algebra sandbox** for image "
-            "image processing. Every operation exposes its actual "
+            "processing. Every operation exposes its actual "
             "mathematical trace — formulas, derivations, pixel-level "
             "inspection."
         )
@@ -125,7 +147,7 @@ def _render_sidebar_uploader() -> None:
 
 _render_sidebar_uploader()
 
-st.title("🩻 Image Mathematical Lab")
+st.title("🖼️ Image Mathematical Lab")
 st.markdown(
     "**Linear Algebra-based Image Processing & Enhancement** · "
 )

@@ -30,7 +30,7 @@ st.title("📊 Dashboard")
 # ---------------------------------------------------------------------------
 if gray is None:
     st.warning(
-        "⬅️ No image loaded yet. Upload a chest X-ray on the **main page** "
+        "⬅️ No image loaded yet. Upload image first **main page** "
         "to begin."
     )
 else:

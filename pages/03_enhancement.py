@@ -31,7 +31,7 @@ from visualization.comparison import difference_view, side_by_side
 from visualization.math_workspace import render as render_math
 
 
-st.set_page_config(page_title="Enhancement · Chest X-ray Lab",
+st.set_page_config(page_title="Enhancement · Image Mathematical Lab",
                    page_icon="✨", layout="wide")
 
 if "trace_manager" not in st.session_state:
@@ -44,7 +44,7 @@ st.title("✨ Image Enhancement")
 st.caption("Point-wise intensity transformations with full math transparency.")
 
 if gray is None:
-    st.warning("⬅️ Upload a chest X-ray on the main page first.")
+    st.warning("⬅️ Upload an image on the main page first.")
     st.stop()
 
 

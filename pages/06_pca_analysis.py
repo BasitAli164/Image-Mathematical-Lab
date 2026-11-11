@@ -24,7 +24,7 @@ from mathematical_engine.trace_manager import TraceManager
 from visualization.math_workspace import render as render_math
 
 
-st.set_page_config(page_title="PCA · Chest X-ray Lab", page_icon="🧬",
+st.set_page_config(page_title="PCA · Image Mathematical Lab", page_icon="🧬",
                    layout="wide")
 
 if "trace_manager" not in st.session_state:

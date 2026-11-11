@@ -20,7 +20,7 @@ from visualization.comparison import difference_view, side_by_side
 from visualization.math_workspace import render as render_math
 
 
-st.set_page_config(page_title="SVD Compression · Chest X-ray Lab",
+st.set_page_config(page_title="SVD Compression · Image Mathematical Lab",
                    page_icon="🗜️", layout="wide")
 
 if "trace_manager" not in st.session_state:
@@ -36,7 +36,7 @@ st.caption(
 )
 
 if gray is None:
-    st.warning("⬅️ Upload a chest X-ray on the main page first.")
+    st.warning("⬅️ Upload an image on the main page first.")
     st.stop()
 
 m, n = gray.shape

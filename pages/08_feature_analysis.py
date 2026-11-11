@@ -14,7 +14,7 @@ from core.feature_extraction import extract_all_features
 from mathematical_engine.trace_manager import TraceManager
 
 
-st.set_page_config(page_title="Feature Analysis · Chest X-ray Lab",
+st.set_page_config(page_title="Feature Analysis ·  Image Mathematical Lab",
                    page_icon="📊", layout="wide")
 
 if "trace_manager" not in st.session_state:
@@ -30,7 +30,7 @@ st.caption(
 )
 
 if gray is None:
-    st.warning("⬅️ Upload a chest X-ray on the main page first.")
+    st.warning("⬅️ Upload an image on the main page first.")
     st.stop()
 
 
